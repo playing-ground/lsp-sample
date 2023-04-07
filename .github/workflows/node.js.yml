@@ -18,7 +18,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y xvfb libgtk-3-0 libgbm-dev
-    
+    - name: Set up DBus session address
+      run: echo "DBUS_SESSION_BUS_ADDRESS=/dev/null" >> $GITHUB_ENV
     - name: Start Xvfb
       run: |
         # Start Xvfb on the display 99
